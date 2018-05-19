@@ -6,12 +6,17 @@
 //  Copyright © 2018年 Gao Xing. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Foo.h"
+
+int gGlobalVar = 5;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Foo *myFoo = [[Foo alloc] init];
+        NSLog(@"%i ", gGlobalVar);
+        
+        [myFoo setGlobalVar: 100];
+        NSLog(@"%i ", gGlobalVar);
     }
     return 0;
 }
